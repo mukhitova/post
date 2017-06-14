@@ -81,7 +81,7 @@
                         </div>
                         <div class="pull-left meta">
                             <div class="title h5">
-                                <a href="#"><b>Ryan Haywood</b></a>
+                                <a href="#"><b>Karlygash</b></a>
                                 made a post.
                             </div>
                             <h6 class="text-muted time">1 minute ago</h6>
