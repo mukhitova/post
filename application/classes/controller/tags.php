@@ -1,32 +1,29 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Categories extends Controller_Template
-{
+class Controller_Tags extends Controller_Template {
 
     public $template = 'template';
 
     public function action_index()
     {
-        $modelPosts = new Model_categoriesModel();
+        $modelPosts = new Model_tagModel();
         $posts = $modelPosts->getPage();
         $pagination = Pagination::factory(array('total_items' => $posts['totalRows']));
 
-        $content = View::factory('categoriesView')
-            ->bind('blog_categories', $posts['rows'])
+        $content = View::factory('tagView')
+            ->bind('blog_tags', $posts['rows'])
             ->bind('pagination', $pagination);
         $this->template->content = $content;
     }
 
-    public function action_addcategory()
+    public function action_addtag()
     {
-        $content = View::factory('addCategoryView')
-            ->bind('blog_categories', $cats);
+        $content = View::factory('addTagView')
+            ->bind('blog_tags', $posts);
         $this->template->content = $content;
-
     }
 
-
-    public function action_storecat()
+    public function action_storetag()
     {
         $datas = array(
 
@@ -35,46 +32,45 @@ class Controller_Categories extends Controller_Template
             'meta_description' =>  Arr::get($_POST, 'meta_description'),
             'meta_keywords' =>  Arr::get($_POST, 'meta_keywords'),
             'description' => Arr::get($_POST, 'description'));
-
-
-        $model_user = new Model_categoriesModel();
-        $cats = $model_user->insert_all($datas);
+            $model_user = new Model_tagModel();
+            $tags = $model_user->insert_all($datas);
 
         $this->action_index();
     }
 
-    public function action_deletecat () {
+    public function action_deletetag () {
         $error = true;
-        $modelPost = new Model_categoriesModel();
+        $modelPost = new Model_tagModel();
         $id = Arr::get($_POST, 'id');
         if ($id) {
-            $error = !$modelPost->delete_category($id);
+            $error = !$modelPost->delete_tag($id);
         }
         $this->action_index();
     }
 
-    public function action_editcat()
+    public function action_edittag()
     {
         $post_id = Arr::get($_GET, 'id');
-        $model_user = new Model_categoriesModel();
-        $cats = $model_user->edit_cat($post_id);
+        $model_user = new Model_tagModel();
+        $tags = $model_user->edit_tag($post_id);
 
-        $content = View::factory('editCatView')
-            ->bind('post', $cats);
+        $content = View::factory('editTagView')
+            ->bind('post', $tags);
         $this->template->content = $content;
     }
 
-    public function action_savecat()
+    public function action_savetag()
     {
         $datas = array(
             'title' => Arr::get($_POST, 'title'),
             'meta_title' =>Arr::get($_POST, 'meta_title'),
             'meta_description' =>  Arr::get($_POST, 'meta_description'),
             'meta_keywords' =>  Arr::get($_POST, 'meta_keywords'),
-           'description' => Arr::get($_POST, 'description'),
-           );
+            'description' => Arr::get($_POST, 'description'),
+        );
 
-        $sql = "UPDATE blog_categories SET title=:title, meta_title = :meta_title, meta_description = :meta_description,
+
+        $sql = "UPDATE blog_tags SET title=:title, meta_title = :meta_title, meta_description = :meta_description,
  meta_keywords = :meta_keywords,  description = :description WHERE id = :id";
 
         DB::query(Database::UPDATE, $sql)
@@ -86,8 +82,9 @@ class Controller_Categories extends Controller_Template
             ->param(':description', $datas['description'])
             ->execute();
 
-        return $this->request->redirect('categories');
+        return $this->request->redirect('tags');
     }
+
 
 
 }
