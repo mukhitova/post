@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18e11ca3-695d-4fad-9c41-105db5a2f5fa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kohana.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/classes/controller/site.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/classes/controller/tags.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/classes/model/tagModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/addCategoryView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/addTagView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/categoriesView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/eachpostView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/editCatView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/editPostView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/editTagView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/postView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/siteView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/tagView.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/categories.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/welcome.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/classes/controller/welcome.php" afterPath="$PROJECT_DIR$/application/classes/controller/posts.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/classes/model/Article.php" afterPath="$PROJECT_DIR$/application/classes/model/postModel.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/classes/model/Categories.php" afterPath="$PROJECT_DIR$/application/classes/model/categoriesModel.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/bootstrap.php" afterPath="$PROJECT_DIR$/application/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/controller/categories.php" afterPath="$PROJECT_DIR$/application/classes/controller/categories.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/addPostView.php" afterPath="$PROJECT_DIR$/application/views/addPostView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/template.php" afterPath="$PROJECT_DIR$/application/views/template.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/content/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="807">
-              <caret line="238" column="1" lean-forward="false" selection-start-line="238" selection-start-column="1" selection-end-line="238" selection-end-column="1" />
+            <state relative-caret-position="324">
+              <caret line="219" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="238" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -72,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eachpostView.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="eachpostView.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/eachpostView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
+            <state relative-caret-position="768">
               <caret line="157" column="7" lean-forward="true" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -421,6 +395,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kohana" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kohana" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -639,12 +631,34 @@
       <workItem from="1497257842623" duration="186000" />
       <workItem from="1497258146913" duration="18000" />
       <workItem from="1497258167825" duration="12622000" />
-      <workItem from="1497325920194" duration="38220000" />
+      <workItem from="1497325920194" duration="38992000" />
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1497437566616</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1497437566617</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test">
+      <created>1497438150765</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1497438150766</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test">
+      <created>1497438301441</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1497438301441</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172792000" />
+    <option name="totallyTimeSpent" value="173564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -674,6 +688,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -807,6 +825,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -814,6 +833,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -821,6 +841,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1041,21 +1062,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="238" column="1" lean-forward="false" selection-start-line="238" selection-start-column="1" selection-end-line="238" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/eachpostView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
+        <state relative-caret-position="768">
           <caret line="157" column="7" lean-forward="true" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/content/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="219" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="238" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
