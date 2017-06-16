@@ -12,7 +12,7 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="content/js/bootstrap.js"></script>
-
+    <script src="content/js/main.js"></script>
     <title>Posts</title>
 
 </head>
@@ -84,9 +84,32 @@
                     </div>
                     <?php echo $pagination;  ?>
                 </div>
-                <div style ="background-color: lavender;" class="col-sm-4">
+                <div class="row">
+                <div class="col-sm-4">.col-sm-4
+                   <!-- <div class="row">.col-sm-4-->
+                       <!-- <?php /*foreach ($blog_posts as $post){*/?>
+                       --><!--     <div class="col-sm-6" >
+                                <div class="thumbnail"><img src="<?/*=  $post['image_url'] */?>" alt="">
+                                    <div class="caption">
+                                        <h4> <?php /*echo $post['title'] */?></h4>
+                                        <p><?php
+/*                                            $string = $post['description'];
+                                            if(strlen($string) > 100) $string = substr($string, 0, 100).'...';
+                                            echo $string;
+                                            */?></p>
 
+                                        <?php
+/*                                        echo "<td><a href='/kohana/posts/eachpost?id={$post['id']}' class='btn btn-success'>More</a></td>";
+                                        */?>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                     <!--   --><?php /*} */?>
+
+                  <!--  </div>-->
                 </div>
+            </div>
 
             </div>
 

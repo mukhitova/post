@@ -2,6 +2,7 @@
 
 class Controller_Posts extends Controller_Template {
 
+    private $db = 'kohana';
     public $template = 'template';
 
 	public function action_index()
@@ -10,6 +11,8 @@ class Controller_Posts extends Controller_Template {
         $posts = $modelPosts->getPage();
         $pagination = Pagination::factory(array('total_items' => $posts['totalRows']));
 
+      /*  $kwy = session_create_id();
+var_dump($kwy);*/
         $content = View::factory('postView')
          ->bind('blog_posts', $posts['rows'])
          ->bind('pagination', $pagination);
@@ -75,13 +78,13 @@ class Controller_Posts extends Controller_Template {
         $post_id = Arr::get($_GET, 'id');
         $model_user = new Model_postModel();
         $posts = $model_user->edit_post($post_id);
-
+        $viewPost = $model_user->setView(Cookie::get('b_user_id'), $_GET['id']);
         $content = View::factory('eachpostView')
             ->bind('post', $posts);
         $this->template->content = $content;
+
+
     }
-
-
     public function action_savepost()
     {
         $datas = array(

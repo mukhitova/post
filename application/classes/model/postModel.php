@@ -60,5 +60,22 @@ class Model_postModel extends Model
         );
     }
 
+    public function setView($user_id, $post_id){
+      $sql= DB::query(Database::INSERT, "INSERT INTO blog_view (`user_id`, `post_id`)
+                SELECT * FROM (SELECT :user_id, :post_id) AS tmp
+                    WHERE NOT EXISTS (
+                    SELECT user_id,post_id FROM blog_view WHERE user_id = :user_id and post_id = :post_id
+                ) LIMIT 1;")
+          ->param(':user_id', $user_id)
+          ->param(':post_id', $post_id)
+          ->execute();
+    }
 
+   /* public function countPosts ($post_id) {
+        $sql = DB::query(Database::SELECT, "SELECT * from 
+                        (SELECT COUNT(`post_id`) FROM `blog_view` WHERE `post_id`= :post_id) as tmp LIMIT 3")
+                        ->param(':post_id', $post_id)
+                        ->execute();
+    }*/
 }
+
