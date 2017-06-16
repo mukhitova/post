@@ -60,6 +60,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-8">
+                    <br>
                     <div class="row">
                         <?php foreach ($blog_posts as $post){?>
                         <div class="col-sm-6" >
@@ -71,12 +72,12 @@
                                         if(strlen($string) > 100) $string = substr($string, 0, 100).'...';
                                         echo $string;
                                         ?></p>
-
                                     <?php
                                     echo "<td><a href='/kohana/posts/eachpost?id={$post['id']}' class='btn btn-success'>More</a></td>";
                                     ?>
                                 </div>
                             </div>
+                            </br>
                         </div>
 
                         <?php } ?>
@@ -84,8 +85,32 @@
                     </div>
                     <?php echo $pagination;  ?>
                 </div>
-                <div style ="background-color: lavender;" class="col-sm-4">
 
+                <div class="col-sm-4">
+                    <h5 align="center">Новые</h5>
+                    <?php foreach ($newposts as $newpost){?>
+
+                        <div  class="col-sm-12" >
+                            <div class="thumbnail"><img src="<?=  $newpost['image_url'] ?>" alt="">
+                                <div class="caption">
+                                    <h4> <?php echo $newpost['title'] ?></h4>
+                                    <p><?php
+                                        $string = $newpost['description'];
+                                        if(strlen($string) > 100) $string = substr($string, 0, 100).'...';
+                                        echo $string;
+                                        ?></p>
+
+                                    <?php
+                                    echo "<td><a href='/kohana/posts/eachpost?id={$newpost['id']}' class='btn btn-success'>More</a></td>";
+                                    ?>
+                                </div>
+                            </div>
+                            </br>
+                        </div>
+
+                    <?php } ?>
+
+                </div>
                 </div>
 
             </div>
