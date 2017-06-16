@@ -15,6 +15,7 @@ class Controller_Posts extends Controller_Template {
          ->bind('pagination', $pagination);
         $this->template->content = $content;
 
+
     }
 
     public function action_addpost()
@@ -22,9 +23,6 @@ class Controller_Posts extends Controller_Template {
         $content = View::factory('addPostView')
             ->bind('blog_posts', $posts);
         $this->template->content = $content;
-
-
-
     }
 
     public function action_storepost()
@@ -113,6 +111,7 @@ class Controller_Posts extends Controller_Template {
 
         return $this->request->redirect('posts');
     }
+
 
 
 }

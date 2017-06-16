@@ -113,16 +113,12 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
-/*Route::set('default', '(<controller>(/<action>(/<id>)))')
-	->defaults(array(
-		'controller' => 'posts',
-		'action'     => 'index',
-	));*/
+
 
 
 
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'posts',
+		'controller' => 'site',
 		'action'     => 'index',
 	));

@@ -60,5 +60,11 @@ class Model_postModel extends Model
         );
     }
 
+    public function newPost(){
+        $newposts = "SELECT * FROM blog_posts ORDER BY date DESC limit 3";
+
+        return DB::query(Database::SELECT, $newposts)
+            ->execute()->as_array();
+    }
 
 }
