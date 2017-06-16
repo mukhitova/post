@@ -14,8 +14,6 @@ class Controller_Posts extends Controller_Template {
          ->bind('blog_posts', $posts['rows'])
          ->bind('pagination', $pagination);
         $this->template->content = $content;
-
-
     }
 
     public function action_addpost()
@@ -30,20 +28,20 @@ class Controller_Posts extends Controller_Template {
         $datas = array(
 
             'title' => Arr::get($_POST, 'title'),
-            'meta_title' =>Arr::get($_POST, 'meta_title'),
-            'meta_description' =>  Arr::get($_POST, 'meta_description'),
-            'meta_keywords' =>  Arr::get($_POST, 'meta_keywords'),
-            'image_url' =>  Arr::get($_POST, 'image_url'),
+            'meta_title' => Arr::get($_POST, 'meta_title'),
+            'meta_description' => Arr::get($_POST, 'meta_description'),
+            'meta_keywords' => Arr::get($_POST, 'meta_keywords'),
+            'image_url' => Arr::get($_POST, 'image_url'),
             'description' => Arr::get($_POST, 'description'),
             'text' => Arr::get($_POST, 'text'),
-            'user_id' =>Arr::get($_POST, 'user_id'));
+            'user_id' => Arr::get($_POST, 'user_id'));
+
 
         $model_user = new Model_postModel();
         $post = $model_user->insert_all($datas);
-
         $this->action_index();
+        $this->template->content = View::factory('addPostView');
     }
-
 
     public function action_deletepost () {
         $error = true;
@@ -110,6 +108,7 @@ class Controller_Posts extends Controller_Template {
             ->execute();
 
         return $this->request->redirect('posts');
+
     }
 
 

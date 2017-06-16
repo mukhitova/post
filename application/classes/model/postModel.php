@@ -67,4 +67,14 @@ class Model_postModel extends Model
             ->execute()->as_array();
     }
 
+    public function countId () {
+        $count= "select p.*, count(*) as viewss
+                  from blog_posts p
+                  left join blog_view v on (v.post_id = p.id)
+                  group by p.id
+                  order by viewss desc limit 3";
+        return DB::query(Database::SELECT,$count)
+            ->execute()->as_array();
+    }
+
 }

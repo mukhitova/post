@@ -32,6 +32,11 @@ class Controller_Tags extends Controller_Template {
             'meta_description' =>  Arr::get($_POST, 'meta_description'),
             'meta_keywords' =>  Arr::get($_POST, 'meta_keywords'),
             'description' => Arr::get($_POST, 'description'));
+
+
+
+
+
             $model_user = new Model_tagModel();
             $tags = $model_user->insert_all($datas);
 

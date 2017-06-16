@@ -119,6 +119,6 @@ Kohana::modules(array(
 
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'site',
+		'controller' => 'posts',
 		'action'     => 'index',
 	));
