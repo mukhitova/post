@@ -84,8 +84,8 @@
                     </div>
                     <?php echo $pagination;  ?>
                 </div>
-                <div class="row">
                 <div class="col-sm-4">.col-sm-4
+                    <div class="row">
                    <!-- <div class="row">.col-sm-4-->
                        <!-- <?php /*foreach ($blog_posts as $post){*/?>
                        --><!--     <div class="col-sm-6" >
@@ -109,7 +109,7 @@
 
                   <!--  </div>-->
                 </div>
-            </div>
+                </div>
 
             </div>
 
