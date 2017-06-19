@@ -108,9 +108,9 @@
                             </br>
                         </div>
 
-                    <?php } ?>
-
-
+                    <?php } ?><!--
+                    //detect it
+-->
 
 
                     <h5 align="center">Популярные</h5>

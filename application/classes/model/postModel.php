@@ -76,5 +76,15 @@ class Model_postModel extends Model
         return DB::query(Database::SELECT,$count)
             ->execute()->as_array();
     }
+    public function setView($user_id, $post_id){
+        $sql= DB::query(Database::INSERT, "INSERT INTO blog_view (user_id, post_id)
+                SELECT * FROM (SELECT :user_id, :post_id) AS tmp
+                    WHERE NOT EXISTS (
+                    SELECT user_id,post_id FROM blog_view WHERE user_id = :user_id and post_id = :post_id
+                ) LIMIT 1;")
+            ->param(':user_id', $user_id)
+            ->param(':post_id', $post_id)
+            ->execute();
+    }
 
 }

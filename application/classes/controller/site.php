@@ -10,7 +10,8 @@ class Controller_site extends Controller_Template
 
         if(Cookie::get('b_user_id')==''){
             $b_user_id = rand(100,1000).''.rand(100,1000).''.rand(100,1000);
-            Cookie::set('b_user_id',$b_user_id);}
+            Cookie::set('b_user_id',$b_user_id);
+        }
 
         $modelPosts = new Model_postModel();
         $post = $modelPosts->getPage();
@@ -26,6 +27,8 @@ class Controller_site extends Controller_Template
             ->bind('count', $count)
             ->bind('pagination', $pagination);
         $this->template->content = $content;
+
+
     }
 
 

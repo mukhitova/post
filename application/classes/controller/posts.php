@@ -70,10 +70,19 @@ class Controller_Posts extends Controller_Template {
     {
         $post_id = Arr::get($_GET, 'id');
         $model_user = new Model_postModel();
+
+
+        $viewPost = $model_user->setView(Cookie::get('b_user_id'), $_GET['id']);
+
         $posts = $model_user->edit_post($post_id);
+        $newposts = $model_user->newPost();
+        $count = $model_user->countId();
 
         $content = View::factory('eachpostView')
-            ->bind('post', $posts);
+            ->bind('post', $posts)
+            ->bind('newposts', $newposts)
+            ->bind('count', $count);
+
         $this->template->content = $content;
     }
 

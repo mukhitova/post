@@ -119,6 +119,13 @@ Kohana::modules(array(
 
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'posts',
+		'controller' => 'site',
 		'action'     => 'index',
 	));
+
+/*
+Route::set('alternative', '(<posts>(/<action>(/<id>)))')
+    ->defaults(array(
+        'controller' => 'posts',
+        'action'     => 'index',
+    ));*/
