@@ -122,3 +122,10 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'site',
 		'action'     => 'index',
 	));
+
+/*
+Route::set('alternative', '(<posts>(/<action>(/<id>)))')
+    ->defaults(array(
+        'controller' => 'posts',
+        'action'     => 'index',
+    ));*/

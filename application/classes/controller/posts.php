@@ -14,8 +14,6 @@ class Controller_Posts extends Controller_Template {
          ->bind('blog_posts', $posts['rows'])
          ->bind('pagination', $pagination);
         $this->template->content = $content;
-
-
     }
 
     public function action_addpost()
@@ -30,20 +28,20 @@ class Controller_Posts extends Controller_Template {
         $datas = array(
 
             'title' => Arr::get($_POST, 'title'),
-            'meta_title' =>Arr::get($_POST, 'meta_title'),
-            'meta_description' =>  Arr::get($_POST, 'meta_description'),
-            'meta_keywords' =>  Arr::get($_POST, 'meta_keywords'),
-            'image_url' =>  Arr::get($_POST, 'image_url'),
+            'meta_title' => Arr::get($_POST, 'meta_title'),
+            'meta_description' => Arr::get($_POST, 'meta_description'),
+            'meta_keywords' => Arr::get($_POST, 'meta_keywords'),
+            'image_url' => Arr::get($_POST, 'image_url'),
             'description' => Arr::get($_POST, 'description'),
             'text' => Arr::get($_POST, 'text'),
-            'user_id' =>Arr::get($_POST, 'user_id'));
+            'user_id' => Arr::get($_POST, 'user_id'));
+
 
         $model_user = new Model_postModel();
         $post = $model_user->insert_all($datas);
-
         $this->action_index();
+        $this->template->content = View::factory('addPostView');
     }
-
 
     public function action_deletepost () {
         $error = true;
@@ -72,10 +70,19 @@ class Controller_Posts extends Controller_Template {
     {
         $post_id = Arr::get($_GET, 'id');
         $model_user = new Model_postModel();
+
+
+        $viewPost = $model_user->setView(Cookie::get('b_user_id'), $_GET['id']);
+
         $posts = $model_user->edit_post($post_id);
+        $newposts = $model_user->newPost();
+        $count = $model_user->countId();
 
         $content = View::factory('eachpostView')
-            ->bind('post', $posts);
+            ->bind('post', $posts)
+            ->bind('newposts', $newposts)
+            ->bind('count', $count);
+
         $this->template->content = $content;
     }
 
@@ -110,6 +117,7 @@ class Controller_Posts extends Controller_Template {
             ->execute();
 
         return $this->request->redirect('posts');
+
     }
 
 

@@ -108,8 +108,31 @@
                             </br>
                         </div>
 
-                    <?php } ?>
+                    <?php } ?><!--
+                    //detect it
+-->
 
+
+                    <h5 align="center">Популярные</h5>
+                        <?php foreach ($count as $countIds){?>
+                            <div class="col-sm-12" >
+                                <div class="thumbnail"><img src="<?=  $countIds['image_url'] ?>" alt="">
+                                    <div class="caption">
+                                        <h4> <?php echo $countIds['title'] ?></h4>
+                                        <p><?php
+                                            $string = $countIds['description'];
+                                            if(strlen($string) > 100) $string = substr($string, 0, 100).'...';
+                                            echo $string;
+                                            ?></p>
+
+                                        <?php
+                                        echo "<td><a href='/kohana/posts/eachpost?id={$countIds['id']}' class='btn btn-success'>More</a></td>";
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php } ?>
                 </div>
                 </div>
 

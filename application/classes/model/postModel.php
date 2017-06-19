@@ -67,4 +67,24 @@ class Model_postModel extends Model
             ->execute()->as_array();
     }
 
+    public function countId () {
+        $count= "select p.*, count(*) as viewss
+                  from blog_posts p
+                  left join blog_view v on (v.post_id = p.id)
+                  group by p.id
+                  order by viewss desc limit 3";
+        return DB::query(Database::SELECT,$count)
+            ->execute()->as_array();
+    }
+    public function setView($user_id, $post_id){
+        $sql= DB::query(Database::INSERT, "INSERT INTO blog_view (user_id, post_id)
+                SELECT * FROM (SELECT :user_id, :post_id) AS tmp
+                    WHERE NOT EXISTS (
+                    SELECT user_id,post_id FROM blog_view WHERE user_id = :user_id and post_id = :post_id
+                ) LIMIT 1;")
+            ->param(':user_id', $user_id)
+            ->param(':post_id', $post_id)
+            ->execute();
+    }
+
 }
