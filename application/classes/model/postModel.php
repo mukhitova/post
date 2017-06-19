@@ -71,11 +71,24 @@ class Model_postModel extends Model
           ->execute();
     }
 
-   /* public function countPosts ($post_id) {
-        $sql = DB::query(Database::SELECT, "SELECT * from 
-                        (SELECT COUNT(`post_id`) FROM `blog_view` WHERE `post_id`= :post_id) as tmp LIMIT 3")
-                        ->param(':post_id', $post_id)
-                        ->execute();
-    }*/
+    public function newPost(){
+        $newposts = "SELECT * FROM blog_posts ORDER BY date DESC limit 3";
+
+        return DB::query(Database::SELECT, $newposts)
+            ->execute()->as_array();
+    }
+
+
+    public function countId () {
+        $count= "select p.*, count(*) as viewss
+                  from blog_posts p
+                  left join blog_view v on (v.post_id = p.id)
+                  group by p.id
+                  order by viewss desc limit 3";
+        return DB::query(Database::SELECT,$count)
+            ->execute()->as_array();
+    }
+
 }
+
 

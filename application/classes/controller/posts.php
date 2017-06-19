@@ -10,9 +10,6 @@ class Controller_Posts extends Controller_Template {
         $modelPosts = new Model_postModel();
         $posts = $modelPosts->getPage();
         $pagination = Pagination::factory(array('total_items' => $posts['totalRows']));
-
-      /*  $kwy = session_create_id();
-var_dump($kwy);*/
         $content = View::factory('postView')
          ->bind('blog_posts', $posts['rows'])
          ->bind('pagination', $pagination);
@@ -25,8 +22,6 @@ var_dump($kwy);*/
         $content = View::factory('addPostView')
             ->bind('blog_posts', $posts);
         $this->template->content = $content;
-
-
 
     }
 
@@ -79,12 +74,17 @@ var_dump($kwy);*/
         $model_user = new Model_postModel();
         $posts = $model_user->edit_post($post_id);
         $viewPost = $model_user->setView(Cookie::get('b_user_id'), $_GET['id']);
+
+        $newposts=$model_user->newPost();
+        $count = $model_user->countId();
         $content = View::factory('eachpostView')
-            ->bind('post', $posts);
+            ->bind('post', $posts)
+            ->bind('count', $count)
+            ->bind('newposts', $newposts);
         $this->template->content = $content;
-
-
     }
+
+
     public function action_savepost()
     {
         $datas = array(
